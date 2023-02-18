@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PlaylistDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:background="?attr/themeColor"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/img_back_PDA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:padding="5dp"
+            app:tint="@color/white"
+            android:contentDescription="@string/back_btn"/>
+
+        <TextView
+            android:id="@+id/tv_playlist_name_PDA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/playlist_btn"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_PDA"
+            android:layout_width="250dp"
+            android:layout_height="180dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:id="@+id/tv_details_PDA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/playlist_name"
+            android:gravity="start|center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:padding="5dp"
+            android:background="?attr/themeColor"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_PDA"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="40dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll2" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_shuffle_PDA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_shuffle"
+        app:iconTint="?attr/themeColor"
+        android:backgroundTint="@color/white"
+        app:strokeWidth="5dp"
+        app:strokeColor="?attr/themeColor"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_add_song_PDA"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/add_song"
+            android:drawableLeft="@drawable/ic_add"
+            android:drawableTint="?attr/themeColor"
+            android:padding="5dp"
+            android:text="@string/add_song"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            tools:ignore="RtlHardcoded,UnusedAttribute" />
+
+        <Button
+            android:id="@+id/btn_remove_all_PDA"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/remove_all"
+            android:drawableLeft="@drawable/ic_remove"
+            android:drawableTint="?attr/themeColor"
+            android:padding="5dp"
+            android:text="@string/remove_all"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            tools:ignore="RtlHardcoded,UnusedAttribute" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
